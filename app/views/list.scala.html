@@ -15,22 +15,26 @@
 <!-- Begin page content -->
 <div class="container">
 	<div class="row">
-		@flash.get("success").map { message =>
-			<div class="alert alert-dismissable alert-success">
-				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Well done!</strong> @message
-			</div>
-		}
+		<div class="col-md-12" style="padding-left:3%; padding-right:5%;">
+			<br/>
+			@flash.get("success").map { message =>
+				<div class="alert alert-dismissable alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<strong>Well done!</strong> @message
+				</div>
+			}
+		</div>
+		
 	</div>
 	<div class="row" style="padding-left:3%; padding-right:4%;">
 		<div class="col-md-4">
-			<h4>List of all Knolders:</h4>
+			<h4><b>List of all Knolders:</b></h4>
 		</div>
 		<div class="col-md-4">
 			<div id="actions">
-				@helper.form(action=routes.Application.list(), 'class -> "navbar-form", 'role -> "search") {
-					<input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by knol name...">
-					<input type="submit" id="searchsubmit" value="Filter by name" class="btn btn-primary btn-sm"> 
+				@helper.form(action=routes.Application.list(), 'class -> "", 'role -> "search") {
+					<input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Search">
+					<input type="submit" id="searchsubmit" value="Search knolder" class="btn btn-primary btn-sm"> 
 				} 
 			</div>		
 		</div>

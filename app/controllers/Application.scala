@@ -78,7 +78,7 @@ object Application extends Controller {
       form => {
         val knol = Knol(form.name, form.email, form.m_no, form.id)
         if (KnolTable.add(knol) > 0)
-           KnolListHome.flashing("success" -> s"Company ${form.name} has been added")
+           KnolListHome.flashing("success" -> s"Knolder ${form.name} has been added")
         else
           Ok("Can not add knolder")
       })
@@ -111,7 +111,7 @@ object Application extends Controller {
       form => {
         val knol = Knol(form.name, form.email, form.m_no, Some(id))
         if (KnolTable.updateKnol(knol) > 0)
-           KnolListHome.flashing("success" -> s"Company ${form.name} has been updated")
+           KnolListHome.flashing("success" -> s"Knolder ${form.name} has been updated")
         else
           Ok("Can not update knolder")
       })
