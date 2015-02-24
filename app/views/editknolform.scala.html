@@ -1,0 +1,38 @@
+@* editknolform Template File *@
+@import com.knoldus.models._
+@import helper._
+
+@(title: String, formKnol:Form[Knol],id:Int)
+
+
+@main("Edit Knol Info:"){
+	<div class="row">
+		<div claass="col-md-4">
+			<div style="padding:3%">
+				<h4 style="float: left">@title</h4>
+			</div>
+		</div>
+		<div class="col-md-4">
+				<a href="@routes.Application.deleteknol(id)" class="btn btn-danger btn-sm" style="float: right;">Delete this Knol</a>
+			
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div style="padding:5%;">	
+				@form(routes.Application.updateknol(id)){
+					<fieldset>
+						@inputText(formKnol("name"), '_label -> "Name", 'class -> "form-control")
+						@inputText(formKnol("email"),'_label -> "Email", 'class -> "form-control")
+						@inputText(formKnol("m_no"), '_label -> "Phone", 'class -> "form-control")				
+					</fieldset>
+					<div class="actions">
+						<input type="submit" value="Update"	class="btn btn-primary btn-sm"> or 
+						<a href="@routes.Application.list()" class="btn btn-default btn-sm">Cancel</a>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+}

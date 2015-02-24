@@ -1,0 +1,30 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home Page:
+GET     /                           controllers.Application.index
+
+#Show all knols
+GET 	/showallknols				controllers.Application.showallknols
+
+#Add knol
+GET		/addknolpage				controllers.Application.addknolpage
+POST	/addknol					controllers.Application.addknol()
+
+#Edit/Update Knol
+GET		/editknol:id				controllers.Application.editknol(id:Int)
+POST	/updateknol:id				controllers.Application.updateknol(id:Int)
+
+#Delete Knol
+GET		/deleteknol:id				controllers.Application.deleteknol(id:Int)
+
+#Get list of knol using pagination
+GET		/list						controllers.Application.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+#Routes for Session class:
+GET		/showallsessions			controllers.Application.showallsessions
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
