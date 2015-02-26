@@ -24,7 +24,6 @@
 				</div>
 			}
 		</div>
-		
 	</div>
 	<div class="row" style="padding-left:3%; padding-right:4%;">
 		<div class="col-md-4">
@@ -68,10 +67,9 @@
 						}
 					</tbody>
 				</table>
-				<hr/>
 			
 				@*Table Header for pagination*@
-            	<ul class="pager" style="padding-bottom: 70px;">
+            	<ul class="pager">
             	    @currentPage.prev.map { page =>
             	        <li class="previous">
             	            <a href="@link(page)">&larr; Previous</a>

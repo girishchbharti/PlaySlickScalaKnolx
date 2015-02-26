@@ -1,0 +1,40 @@
+@* login Template File *@
+@import helper._
+@import com.knoldus.models._
+
+@(title: String, regForm : Form[User])
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@loginMain("Register"){
+	<div class="row" style="padding-top:2%;">
+		<div class="col-md-2">
+	       	<div>
+	       			
+			</div>
+	    </div>
+	    <div class="col-md-5">
+	       	<h4>Registration Form:</h4>
+	  			<div style="padding:2%;">
+				@form(routes.Application.registerNow()) {    
+     				<fieldset>
+        			    @inputText(regForm("name"), '_label -> "Name", 'class -> "form-control")
+        			    @inputText(regForm("address"), '_label -> "Address", 'class -> "form-control")
+        			    @inputText(regForm("company"), '_label -> "Company", 'class -> "form-control")
+        				@inputText(regForm("email"), '_label -> "Email", 'class -> "form-control")
+        				@inputPassword(regForm("password"), '_label -> "Password", 'class -> "form-control")
+        				@inputText(regForm("phone"), '_label -> "Contact No", 'class -> "form-control")
+        			</fieldset>
+        			<div class="actions">
+        				<br/>
+            			<input type="submit" value="Register" class="btn btn-primary btn-sm"> or 
+            			<a href="@routes.Application.login()" class="btn btn-default btn-sm">Cancel</a> 
+        			</div>
+    				}
+    			</div>
+    	</div>
+	    <div class="col-md-3">
+	    
+	    </div>
+	</div>
+}

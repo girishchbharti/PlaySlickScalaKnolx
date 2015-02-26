@@ -1,10 +1,10 @@
-@(title: String)(content: Html)
+@(user: String)(content: Html)
 
 <!DOCTYPE html>
 <html>
     <head>
     	<meta charset="UTF-8">
-        <title>@title</title>
+        <title>Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("bootstrap-3.3.2-dist/css/bootstrap.min.css")" )>        
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
@@ -17,7 +17,7 @@
     	@****************************************
     	*The Header is being called here.       *
     	****************************************@
-    	@header("Index Page")
+    	@header(user)
     	@****************************************************
     	*This is dynamic content coming from different pages*
     	****************************************************@

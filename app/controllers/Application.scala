@@ -8,6 +8,10 @@ import play.api.db.slick._
 import play.api.Play.current
 import views._
 import com.knoldus.models._
+import java.util.Date
+import org.joda.time.LocalDateTime
+import com.knoldus.models.User
+import play.api.mvc.Flash
 
 object Application extends Controller {
 
@@ -18,10 +22,39 @@ object Application extends Controller {
    */
   val knolForm = Form(
     mapping(
-      "name" -> text,
-      "email" -> text,
+      "name" -> nonEmptyText,
+      "email" -> email,
       "m_no" -> text,
       "id" -> optional(number))(Knol.apply)(Knol.unapply))
+
+  /**
+   * **********************************************
+   * This is used for log in validation           *
+   * **********************************************
+   */
+  val logInForm = Form(
+    tuple(
+      "username" -> nonEmptyText,
+      "password" -> nonEmptyText))
+  /**
+   * **********************************************
+   * This form is used for user registration.     *
+   * **********************************************
+   */
+
+  /**This data type is to be changed as it is long on database**/
+  val regForm = Form(
+    mapping(
+      "name" -> nonEmptyText,
+      "address" -> text,
+      "company" -> nonEmptyText,
+      "email" -> nonEmptyText,
+      "password" -> nonEmptyText,
+      "phone" -> text,
+      "userType" -> ignored(2: Int),
+      "created" -> ignored(new Date()),
+      "updated" -> ignored(new Date()),
+      "id" -> ignored(Some(0): Option[Int]))(User.apply)(User.unapply))
 
   /**
    * ***********************************************
@@ -30,14 +63,168 @@ object Application extends Controller {
    * Output: Home Page                             *
    * ***********************************************
    */
-  
-  val KnolListHome = Redirect(routes.Application.list())
-  
-  def knolhome = {KnolListHome}
-  
-  def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def KnolListHome = Redirect(routes.Application.list())
+
+  /**
+   * ***********************************************
+   * This function display the login page.         *
+   * Input: No arguments                           *
+   * Output: LogIn Page                            *
+   * ***********************************************
+   */
+  def LogInHome = Redirect(routes.Application.login())
+
+  /**
+   * ***********************************************
+   * Function provide list of all knolders.        *
+   * ***********************************************
+   */
+  def knolhome = { KnolListHome }
+
+  /**
+   * ***********************************************
+   * This function display the home page.          *
+   * Input: No arguments                           *
+   * Output: Home Page                             *
+   * ***********************************************
+   */
+  def login = Action { implicit request =>
+    Ok(views.html.login("LogIn")).flashing("regmsg" -> "Please LogIn for accessing services")
   }
+
+  /**
+   * ***********************************************
+   * This function display the login page.        *
+   * Input: No arguments                           *
+   * Output: Login Page                            *
+   * ***********************************************
+   */
+  def logout = Action { implicit request =>
+    Ok(views.html.login("login")).withNewSession
+  }
+
+  /**
+   * ***********************************************
+   * This function is used to validate the         *
+   * login form input.                             *
+   * Input: email and password                     *
+   * Output: logged in  Page                       *
+   * ***********************************************
+   */
+  def validatelogin: Action[AnyContent] = DBAction { implicit rs =>
+    logInForm.bindFromRequest.fold(
+      formWihErrors => {
+        LogInHome.flashing("regmsg" -> "Log In faliure! Please enter correct email id and password!")
+      },
+      form => {
+        val email = form._1
+        val pass = form._2
+        val res = UserTable.logInValidate(email, pass)
+        if (res.get == 1) {
+          Ok(views.html.index(form._1)).withSession("username" -> email)
+        } else {
+          Ok(views.html.login("LogIn")).flashing("regmsg" -> "Error occured!Please Log in again with correct email and password!")
+        }
+      })
+  }
+
+  /**
+   * ***********************************************
+   * This function is calling the registration form*
+   * Input: calling action                         *
+   * Output: registration page                     *
+   * ***********************************************
+   */
+  def register = Action { implicit request =>
+    Ok(views.html.register("Register", regForm))
+  }
+
+  /**
+   * ***********************************************
+   * This function is used to register the user    *
+   * Input: required details of user               *
+   * Output: Registered                            *
+   * ***********************************************
+   */
+  def registerNow: Action[AnyContent] = DBAction { implicit rs =>
+    regForm.bindFromRequest.fold(
+      formWithErrors => {
+        Ok(views.html.login("Error"))
+      },
+      form => {
+        try {
+          val user = User(form.name, form.address, form.company, form.email, form.password, form.phone, 2, new Date(), new Date(), Some(0))
+          val count = UserTable.addUser(user)
+          LogInHome.flashing("regmsg" -> s"Registration successfull! ${form.name} Now You can login through login panel")
+        } catch {
+          case ex: Exception => {
+            LogInHome
+          }
+        }
+      })
+  }
+  
+  /**
+   * ******************************************************
+   * This function takes no arguments and provide update  *
+   * form to users for profile update.                    *
+   * Input: No arguments.                                 *
+   * Output:Knol records.                                 *
+   * ******************************************************
+   */  
+  def myprofile(): Action[AnyContent] = DBAction { implicit rs =>
+    rs.request.session.get("username").map { email =>
+      val user = UserTable.getuser(email)
+      user match {
+        case user => Ok(views.html.myprofile("Profile", regForm.fill(user.get)))
+        case None => Ok("Error")
+
+      }
+    }.getOrElse {
+      Unauthorized("Oops, you are not connected")
+    }
+
+  }
+
+  /**
+   * ******************************************************
+   * This action takes no arguments and update the user   *
+   * profile.                                             *
+   * Input: No arguments(user form implicitly).           *
+   * Output:Update status and homepage.                   *
+   * ******************************************************
+   */
+  def updateprofile(): Action[AnyContent] = DBAction { implicit rs =>
+    rs.request.session.get("username").map { email =>
+      regForm.bindFromRequest().fold(
+        formWithErrors => {
+          Ok(views.html.index("Home")).flashing("success" -> "Please try again! You have entered form with errors!")
+        },
+        user =>{
+          val id = UserTable.getid(email).get
+          val userToUpdate: User = user.copy(id = Some(id))
+          UserTable.updateuser(userToUpdate)
+          Ok("Successfull")
+        })
+    }.getOrElse(Ok("Session not found"))
+  }
+
+  /**
+   * ************************************************************
+   * This function takes no arguments and return home page with *
+   * all accesses.                                              *
+   * Input: No arguments.                                       *
+   * Output:Home page.                                          *
+   * ************************************************************
+   */
+  def index = Action { implicit request =>
+    request.session.get("username").map { user =>
+      Ok(views.html.index(user.toString()))
+    }.getOrElse {
+      Unauthorized("Oops, you are not connected")
+    }
+  }
+
   /**
    * ******************************************************
    * This function takes no arguments and return page with*
@@ -49,6 +236,7 @@ object Application extends Controller {
   def showallknols: Action[AnyContent] = DBAction { implicit rs =>
     Ok(views.html.showallknols("All Knols", KnolTable.showAllKnols()))
   }
+
   /**
    * ******************************************************
    * This function takes no arguments and return add new  *
@@ -60,6 +248,7 @@ object Application extends Controller {
   def addknolpage(): Action[AnyContent] = DBAction { implicit rs =>
     Ok(views.html.addknolform("ADD NEW KNOL:", knolForm))
   }
+
   /**
    * ******************************************************
    * This function takes no arguments explicitly but post *
@@ -78,11 +267,12 @@ object Application extends Controller {
       form => {
         val knol = Knol(form.name, form.email, form.m_no, form.id)
         if (KnolTable.add(knol) > 0)
-           KnolListHome.flashing("success" -> s"Knolder ${form.name} has been added")
+          KnolListHome.flashing("success" -> s"Knolder ${form.name} has been added")
         else
           Ok("Can not add knolder")
       })
   }
+
   /**
    * ******************************************************
    * This function takes knolid and return edit knol      *
@@ -95,6 +285,7 @@ object Application extends Controller {
     val knol = KnolTable.getKnol(id)
     Ok(views.html.editknolform("EDIT KNOL:", knolForm.fill(knol), id))
   }
+
   /**
    * **********************************************************
    * This function takes knolid and bind edit knol from to    *
@@ -111,11 +302,12 @@ object Application extends Controller {
       form => {
         val knol = Knol(form.name, form.email, form.m_no, Some(id))
         if (KnolTable.updateKnol(knol) > 0)
-           KnolListHome.flashing("success" -> s"Knolder ${form.name} has been updated")
+          KnolListHome.flashing("success" -> s"Knolder ${form.name} has been updated")
         else
-          Ok("Can not update knolder")
+          KnolListHome.flashing("success" -> s"Knolder ${form.name} could not updated")
       })
   }
+
   /**
    * ******************************************************
    * This function takes knolid and return edit knol      *
@@ -128,11 +320,11 @@ object Application extends Controller {
     KnolTable.deleteknol(id)
     KnolListHome.flashing("success" -> s"Knolder has been deleted")
   }
-  
-  def showallsessions():Action[AnyContent]=DBAction{implicit rs=>
-    Ok("Session table will be here")  
+
+  def showallsessions(): Action[AnyContent] = DBAction { implicit rs =>
+    Ok("Session table will be here")
   }
-  
+
   def list(page: Int, orderBy: Int, filter: String) = DBAction { implicit request =>
     val pageData = KnolTable.list(page = page, orderBy = orderBy, filter = ("%" + filter + "%"))
     Ok(views.html.list(pageData, orderBy, filter))
