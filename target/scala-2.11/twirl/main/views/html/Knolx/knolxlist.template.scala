@@ -32,7 +32,7 @@ Seq[Any](format.raw/*2.17*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 02 00:20:16 IST 2015
+                  DATE: Mon Mar 02 13:48:10 IST 2015
                   SOURCE: /home/knoldus/PlayProjects/MyPlaySlickScala/app/views/Knolx/knolxlist.scala.html
                   HASH: 90fbd8204200d89bc6cc4880920b8cb898410bd5
                   MATRIX: 565->31|668->46

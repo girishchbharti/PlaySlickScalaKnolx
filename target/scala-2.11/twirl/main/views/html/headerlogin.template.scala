@@ -53,7 +53,7 @@ Seq[Any](format.raw/*2.14*/("""
     			<!-- Collect the nav links, forms, and other content for toggling -->
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       				<ul class="nav navbar-nav">
-        				<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        				<li class="active"><a href="/aboutus">Home <span class="sr-only">(current)</span></a></li>
         				<li><a href="/aboutus">About Us</a></li>
         				<li class="dropdown">
           					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -103,9 +103,9 @@ Seq[Any](format.raw/*2.14*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 02 01:23:41 IST 2015
+                  DATE: Mon Mar 02 15:21:50 IST 2015
                   SOURCE: /home/knoldus/PlayProjects/MyPlaySlickScala/app/views/headerlogin.scala.html
-                  HASH: 75220f91b4e77761eeba24292ba3b06f735b6656
+                  HASH: 0aaed9faa43b968597496ba9083950a68c527b9b
                   MATRIX: 562->33|662->45|690->47|826->157|840->163|893->196|1199->475|1214->481|1258->504
                   LINES: 19->2|22->2|24->4|27->7|27->7|27->7|33->13|33->13|33->13
                   -- GENERATED --

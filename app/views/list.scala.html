@@ -10,21 +10,12 @@
     }.getOrElse(currentOrderBy), currentFilter)
 }
 
-<<<<<<< HEAD
 @main("Knolders","list") {
 
 <!-- Begin page content -->
 
 	<div class="row">
 		<div class="col-md-12">
-=======
-@main("Knolders") {
-
-<!-- Begin page content -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-12" style="padding-left:3%; padding-right:5%;">
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 			<br/>
 			@flash.get("success").map { message =>
 				<div class="alert alert-dismissable alert-success">
@@ -34,19 +25,11 @@
 			}
 		</div>
 	</div>
-<<<<<<< HEAD
 	<div class="row">
 		<div class="col-md-3">
 			<h4><b>Knolders:</b></h4>
 		</div>
 		<div class="col-md-6">
-=======
-	<div class="row" style="padding-left:3%; padding-right:4%;">
-		<div class="col-md-4">
-			<h4><b>List of all Knolders:</b></h4>
-		</div>
-		<div class="col-md-4">
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 			<div id="actions">
 				@helper.form(action=routes.Application.list(), 'class -> "", 'role -> "search") {
 					<input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Search">
@@ -54,20 +37,12 @@
 				} 
 			</div>		
 		</div>
-<<<<<<< HEAD
 		<div class="col-md-3">
-=======
-		<div class="col-md-4">
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 			<a class="btn btn-success btn-sm pull-right" id="add" href="@routes.Application.addknolpage()">ADD NEW KNOLDER</a>	
 		</div>	
 	</div>		
 	<div class="row">
 		<div class="col-md-12">
-<<<<<<< HEAD
-=======
-			<div style="padding-left:2%;padding-right:4%">
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 				@Option(currentPage.items).filterNot(_.isEmpty).map { knols =>
 				<table class="table table-striped">
 					<thead style="background-color:Gray;">
@@ -123,13 +98,6 @@
 					  </div>
 					</div>	
 				}	
-<<<<<<< HEAD
 		</div>
 	</div>	
-=======
-			</div>
-		</div>
-	</div>	
-</div>
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 }

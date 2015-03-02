@@ -1,32 +1,15 @@
-<<<<<<< HEAD
 @(title:String, user: String)(content: Html)
-=======
-@(user: String)(content: Html)
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 
 <!DOCTYPE html>
 <html>
     <head>
     	<meta charset="UTF-8">
-<<<<<<< HEAD
         <title>@title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		@headlinks("css/javascript/jquery")
    </head>
     <body style="background-color:gray;">
     <div class="container" style="background-color:white;">
-=======
-        <title>Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("bootstrap-3.3.2-dist/css/bootstrap.min.css")" )>        
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("bootstrap-3.3.2-dist/js/jquery_2.1.1.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("bootstrap-3.3.2-dist/js/bootstrap.min.js")" type="text/javascript"></script>
-    </head>
-    <body>
-    <div class="container">
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
     	@****************************************
     	*The Header is being called here.       *
     	****************************************@
@@ -34,7 +17,6 @@
     	@****************************************************
     	*This is dynamic content coming from different pages*
     	****************************************************@
-<<<<<<< HEAD
     	<div class="row">
     		<div class="col-md-3">
     			@leftlinkpanel("Left link panel")
@@ -48,9 +30,6 @@
     		</div>
     	</div>
 
-=======
-    	@content
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
     	@*********************************
     	*The footer is being called here.*
     	*********************************@

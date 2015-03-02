@@ -1,6 +1,6 @@
 // @SOURCE:/home/knoldus/PlayProjects/MyPlaySlickScala/conf/routes
-// @HASH:2664ac45dae6bf737c1f2d930885e1727f7a9f4b
-// @DATE:Mon Mar 02 00:20:14 IST 2015
+// @HASH:88816d925ebb2331f267b01d69704febe9d283f0
+// @DATE:Mon Mar 02 14:25:13 IST 2015
 
 package controllers;
 

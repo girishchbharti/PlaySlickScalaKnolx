@@ -34,11 +34,11 @@ Seq[Any](format.raw/*2.14*/("""
 	    		<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><a href="#"> Contact Us</a></li>
 	    	</ul>
 	    	<ul class="list-group">
-  				<li href="#" class="list-group-item"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contact Us</li>
-  				<li href="#" class="list-group-item">Dapibus ac facilisis in</li>
-  				<li href="#" class="list-group-item">Morbi leo risus</li>
-  				<li href="#" class="list-group-item">Porta ac consectetur ac</li>
-  				<li href="#" class="list-group-item">Vestibulum at eros</li>
+  				<li href="#" class="list-group-item"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="#">Contact Us</a></li>
+  				<li href="#" class="list-group-item"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="#">Our Services</a></li>
+  				<li href="#" class="list-group-item"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="#">Our Team</a></li>
+  				<li href="#" class="list-group-item"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="#">Our Process</a></li>
+  				<li href="#" class="list-group-item"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="#">Our Standards</a></li>
 			</ul>	
 	  	</div>
 			  	
@@ -56,9 +56,9 @@ Seq[Any](format.raw/*2.14*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 02 00:20:16 IST 2015
+                  DATE: Mon Mar 02 16:31:22 IST 2015
                   SOURCE: /home/knoldus/PlayProjects/MyPlaySlickScala/app/views/leftlinkpanel.scala.html
-                  HASH: 7810263f2454b6bedd2ef6fc45552a665f6c47b0
+                  HASH: 9125b28966d3e2294a4a8b7be5a17cb1393dc8a4
                   MATRIX: 568->35|668->47|695->48
                   LINES: 19->2|22->2|23->3
                   -- GENERATED --

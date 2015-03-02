@@ -2,17 +2,12 @@
 @import helper._
 @import com.knoldus.models._
 
-<<<<<<< HEAD
 @(title: String, regForm : Form[User])(implicit flash: play.api.mvc.Flash)
-=======
-@(title: String, regForm : Form[User])
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 
 @implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
 
 @loginMain("Register"){
 	<div class="row" style="padding-top:2%;">
-<<<<<<< HEAD
 	    <div class="col-md-8">
 	       	<h5>Registration Form:</h5>
 	       		@flash.get("success").map { message =>
@@ -23,17 +18,6 @@
 				}
 	  			<div style="padding:2%;">
 				@helper.form(action = routes.Application.registerNow(), 'id->"regForm") {    
-=======
-		<div class="col-md-2">
-	       	<div>
-	       			
-			</div>
-	    </div>
-	    <div class="col-md-5">
-	       	<h4>Registration Form:</h4>
-	  			<div style="padding:2%;">
-				@form(routes.Application.registerNow()) {    
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
      				<fieldset>
         			    @inputText(regForm("name"), '_label -> "Name", 'class -> "form-control")
         			    @inputText(regForm("address"), '_label -> "Address", 'class -> "form-control")
@@ -44,18 +28,12 @@
         			</fieldset>
         			<div class="actions">
         				<br/>
-<<<<<<< HEAD
             			<input type="submit" value="Register" class="btn btn-primary"> or 
             			<a href="@routes.Application.login()" class="btn btn-default">Cancel</a> 
-=======
-            			<input type="submit" value="Register" class="btn btn-primary btn-sm"> or 
-            			<a href="@routes.Application.login()" class="btn btn-default btn-sm">Cancel</a> 
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
         			</div>
     				}
     			</div>
     	</div>
-<<<<<<< HEAD
     	<div class="col-md-4">
     	</div>
 	</div>
@@ -80,10 +58,3 @@
 		}
 	});
 </script>
-=======
-	    <div class="col-md-3">
-	    
-	    </div>
-	</div>
-}
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc

@@ -81,7 +81,7 @@ Seq[Any](format.raw/*2.14*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 02 00:20:16 IST 2015
+                  DATE: Mon Mar 02 13:48:10 IST 2015
                   SOURCE: /home/knoldus/PlayProjects/MyPlaySlickScala/app/views/aboutuscontent.scala.html
                   HASH: 6ad611a5c65682b7f6871985666f2cbc61f484c6
                   MATRIX: 571->36|671->48|699->50

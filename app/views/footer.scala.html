@@ -1,16 +1,59 @@
 @* footer1 Template File *@
 @(param: Any)
 
-<nav class="navbar navbar-inverse">
-  <div class="row">
-  	<div class="col-md-12" >
-		  <div class="container-fluid">
-    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-      			<ul class="nav navbar-nav navbar-right">
-        			<li><a href="#">Knoldus Softwares LLP.</a></li>
-      			</ul>
-    		</div>
-  		</div>  	
+<style>
+	.header{
+		background-color: #2196F3; 
+		color:white; 
+		border-radius:5px;
+		padding:5%;
+	}
+	.follow:hover{
+		width:20%;
+		height:50%;		
+	}
+</style>
+
+<div  class="row header">
+	<div class="col-md-4">
+    	<div id="bs-example-navbar-collapse-2">
+    		<h4>About Us</h4>
+    		<legend></legend>
+    		<p>
+    			<b>
+	      		Knoldus strongly believes in strongly sharing 
+	      		knowledge. We conduct knowledge sessions every 
+	      		week. Enthusiasts outside Knoldus who would 
+	      		like to contribute or attend are most welcome. 
+	      		Just drop a mail on knolx@@knoldus.com and enjoy 
+	      		the Scala sessions with generous snacks and drinks.
+	      		</b>	
+	        </p>
+    	</div>
   	</div>
-  </div>
-</nav>
+  	<div class="col-md-4">
+  		<h4>Most Popular</h4>
+  		<legend></legend>
+  		<h6>
+  			<ul>
+  				<li><a style="color:white;" href="#">Locate Us</a></li>
+  				<br/>
+  				<li><a style="color:white;" href="#">Blog</a></li>
+  				<br/>
+  				<li><a style="color:white;" href="#">Testimonials</a></li>
+  				<br/>
+  				<li><a style="color:white;" href="#">Out Team</a></li>
+  			</ul>
+  		</h6>
+  	</div>    	
+  	<div class="col-md-4">
+  		<h4>Contact Us:</h4>
+  		<legend></legend>
+  		<span class="glyphicon glyphicon-earphone" aria-hidden="true">+91-987-654-3210</span><h5 style="color:white;"></h5>
+  		<a href="#"><img class="follow" style="width:10%;height:40%;" src="@routes.Assets.at("/images/facebook.png")"  alt="Image"></a>
+  		<a href="#"><img style="width:10%;height:40%;" src="@routes.Assets.at("/images/linkedin.png")"  alt="Image"></a>
+		<a href="#"><img style="width:10%;height:40%;" src="@routes.Assets.at("/images/twitter.png")"  alt="Image"></a>
+		<a href="#"><img style="width:10%;height:40%;" src="@routes.Assets.at("/images/googleplus.png")"  alt="Image"></a> 		
+  	</div>    	
+</div>
+

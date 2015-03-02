@@ -1,6 +1,6 @@
 // @SOURCE:/home/knoldus/PlayProjects/MyPlaySlickScala/conf/routes
-// @HASH:2664ac45dae6bf737c1f2d930885e1727f7a9f4b
-// @DATE:Mon Mar 02 00:20:14 IST 2015
+// @HASH:88816d925ebb2331f267b01d69704febe9d283f0
+// @DATE:Mon Mar 02 14:25:13 IST 2015
 
 
 import play.core._
@@ -80,90 +80,97 @@ controllers.Application.logout,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "logout", Nil,"GET", """""", Routes.prefix + """logout"""))
         
 
-// @LINE:15
-private[this] lazy val controllers_Application_aboutus7_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
-private[this] lazy val controllers_Application_aboutus7_invoker = createInvoker(
+// @LINE:13
+private[this] lazy val controllers_Application_remotelogin7_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("remotelogin"))))
+private[this] lazy val controllers_Application_remotelogin7_invoker = createInvoker(
+controllers.Application.remotelogin,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "remotelogin", Nil,"GET", """""", Routes.prefix + """remotelogin"""))
+        
+
+// @LINE:16
+private[this] lazy val controllers_Application_aboutus8_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
+private[this] lazy val controllers_Application_aboutus8_invoker = createInvoker(
 controllers.Application.aboutus,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "aboutus", Nil,"GET", """ Home Page:""", Routes.prefix + """"""))
         
 
-// @LINE:17
-private[this] lazy val controllers_Application_index8_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("index"))))
-private[this] lazy val controllers_Application_index8_invoker = createInvoker(
+// @LINE:18
+private[this] lazy val controllers_Application_index9_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("index"))))
+private[this] lazy val controllers_Application_index9_invoker = createInvoker(
 controllers.Application.index,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "index", Nil,"GET", """""", Routes.prefix + """index"""))
         
 
-// @LINE:20
-private[this] lazy val controllers_Application_aboutus9_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("aboutus"))))
-private[this] lazy val controllers_Application_aboutus9_invoker = createInvoker(
+// @LINE:21
+private[this] lazy val controllers_Application_aboutus10_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("aboutus"))))
+private[this] lazy val controllers_Application_aboutus10_invoker = createInvoker(
 controllers.Application.aboutus,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "aboutus", Nil,"GET", """About us""", Routes.prefix + """aboutus"""))
         
 
-// @LINE:23
-private[this] lazy val controllers_Application_showallknols10_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("showallknols"))))
-private[this] lazy val controllers_Application_showallknols10_invoker = createInvoker(
+// @LINE:24
+private[this] lazy val controllers_Application_showallknols11_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("showallknols"))))
+private[this] lazy val controllers_Application_showallknols11_invoker = createInvoker(
 controllers.Application.showallknols,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "showallknols", Nil,"GET", """Show all knols""", Routes.prefix + """showallknols"""))
         
 
-// @LINE:26
-private[this] lazy val controllers_Application_addknolpage11_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addknolpage"))))
-private[this] lazy val controllers_Application_addknolpage11_invoker = createInvoker(
+// @LINE:27
+private[this] lazy val controllers_Application_addknolpage12_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addknolpage"))))
+private[this] lazy val controllers_Application_addknolpage12_invoker = createInvoker(
 controllers.Application.addknolpage,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "addknolpage", Nil,"GET", """Add knol""", Routes.prefix + """addknolpage"""))
         
 
-// @LINE:27
-private[this] lazy val controllers_Application_addknol12_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addknol"))))
-private[this] lazy val controllers_Application_addknol12_invoker = createInvoker(
+// @LINE:28
+private[this] lazy val controllers_Application_addknol13_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addknol"))))
+private[this] lazy val controllers_Application_addknol13_invoker = createInvoker(
 controllers.Application.addknol(),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "addknol", Nil,"POST", """""", Routes.prefix + """addknol"""))
         
 
-// @LINE:30
-private[this] lazy val controllers_Application_editknol13_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("editknol"),DynamicPart("id", """[^/]+""",true))))
-private[this] lazy val controllers_Application_editknol13_invoker = createInvoker(
+// @LINE:31
+private[this] lazy val controllers_Application_editknol14_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("editknol"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Application_editknol14_invoker = createInvoker(
 controllers.Application.editknol(fakeValue[Int]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "editknol", Seq(classOf[Int]),"GET", """Edit/Update Knol""", Routes.prefix + """editknol$id<[^/]+>"""))
         
 
-// @LINE:31
-private[this] lazy val controllers_Application_updateknol14_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("updateknol"),DynamicPart("id", """[^/]+""",true))))
-private[this] lazy val controllers_Application_updateknol14_invoker = createInvoker(
+// @LINE:32
+private[this] lazy val controllers_Application_updateknol15_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("updateknol"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Application_updateknol15_invoker = createInvoker(
 controllers.Application.updateknol(fakeValue[Int]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "updateknol", Seq(classOf[Int]),"POST", """""", Routes.prefix + """updateknol$id<[^/]+>"""))
         
 
-// @LINE:34
-private[this] lazy val controllers_Application_deleteknol15_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("deleteknol"),DynamicPart("id", """[^/]+""",true))))
-private[this] lazy val controllers_Application_deleteknol15_invoker = createInvoker(
+// @LINE:35
+private[this] lazy val controllers_Application_deleteknol16_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("deleteknol"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Application_deleteknol16_invoker = createInvoker(
 controllers.Application.deleteknol(fakeValue[Int]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "deleteknol", Seq(classOf[Int]),"GET", """Delete Knol""", Routes.prefix + """deleteknol$id<[^/]+>"""))
         
 
-// @LINE:37
-private[this] lazy val controllers_Application_list16_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("list"))))
-private[this] lazy val controllers_Application_list16_invoker = createInvoker(
+// @LINE:38
+private[this] lazy val controllers_Application_list17_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("list"))))
+private[this] lazy val controllers_Application_list17_invoker = createInvoker(
 controllers.Application.list(fakeValue[Int], fakeValue[Int], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "list", Seq(classOf[Int], classOf[Int], classOf[String]),"GET", """Get list of knol using pagination""", Routes.prefix + """list"""))
         
 
-// @LINE:40
-private[this] lazy val controllers_Application_showallsessions17_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("showallsessions"))))
-private[this] lazy val controllers_Application_showallsessions17_invoker = createInvoker(
+// @LINE:41
+private[this] lazy val controllers_Application_showallsessions18_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("showallsessions"))))
+private[this] lazy val controllers_Application_showallsessions18_invoker = createInvoker(
 controllers.Application.showallsessions,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "showallsessions", Nil,"GET", """Routes for Session class:""", Routes.prefix + """showallsessions"""))
         
 
-// @LINE:44
-private[this] lazy val controllers_Assets_at18_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
-private[this] lazy val controllers_Assets_at18_invoker = createInvoker(
+// @LINE:45
+private[this] lazy val controllers_Assets_at19_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val controllers_Assets_at19_invoker = createInvoker(
 controllers.Assets.at(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
         
-def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """validateLogin""","""controllers.Application.validatelogin"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """registerNow""","""controllers.Application.registerNow"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """myprofile""","""controllers.Application.myprofile"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """updateprofile""","""controllers.Application.updateprofile"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout"""),("""GET""", prefix,"""controllers.Application.aboutus"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """index""","""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutus""","""controllers.Application.aboutus"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """showallknols""","""controllers.Application.showallknols"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addknolpage""","""controllers.Application.addknolpage"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addknol""","""controllers.Application.addknol()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """editknol$id<[^/]+>""","""controllers.Application.editknol(id:Int)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """updateknol$id<[^/]+>""","""controllers.Application.updateknol(id:Int)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """deleteknol$id<[^/]+>""","""controllers.Application.deleteknol(id:Int)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """list""","""controllers.Application.list(p:Int ?= 0, s:Int ?= 2, f:String ?= "")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """showallsessions""","""controllers.Application.showallsessions"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """validateLogin""","""controllers.Application.validatelogin"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """registerNow""","""controllers.Application.registerNow"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """myprofile""","""controllers.Application.myprofile"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """updateprofile""","""controllers.Application.updateprofile"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """remotelogin""","""controllers.Application.remotelogin"""),("""GET""", prefix,"""controllers.Application.aboutus"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """index""","""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutus""","""controllers.Application.aboutus"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """showallknols""","""controllers.Application.showallknols"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addknolpage""","""controllers.Application.addknolpage"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addknol""","""controllers.Application.addknol()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """editknol$id<[^/]+>""","""controllers.Application.editknol(id:Int)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """updateknol$id<[^/]+>""","""controllers.Application.updateknol(id:Int)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """deleteknol$id<[^/]+>""","""controllers.Application.deleteknol(id:Int)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """list""","""controllers.Application.list(p:Int ?= 0, s:Int ?= 2, f:String ?= "")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """showallsessions""","""controllers.Application.showallsessions"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -227,98 +234,106 @@ case controllers_Application_logout6_route(params) => {
 }
         
 
-// @LINE:15
-case controllers_Application_aboutus7_route(params) => {
+// @LINE:13
+case controllers_Application_remotelogin7_route(params) => {
    call { 
-        controllers_Application_aboutus7_invoker.call(controllers.Application.aboutus)
+        controllers_Application_remotelogin7_invoker.call(controllers.Application.remotelogin)
    }
 }
         
 
-// @LINE:17
-case controllers_Application_index8_route(params) => {
+// @LINE:16
+case controllers_Application_aboutus8_route(params) => {
    call { 
-        controllers_Application_index8_invoker.call(controllers.Application.index)
+        controllers_Application_aboutus8_invoker.call(controllers.Application.aboutus)
    }
 }
         
 
-// @LINE:20
-case controllers_Application_aboutus9_route(params) => {
+// @LINE:18
+case controllers_Application_index9_route(params) => {
    call { 
-        controllers_Application_aboutus9_invoker.call(controllers.Application.aboutus)
+        controllers_Application_index9_invoker.call(controllers.Application.index)
    }
 }
         
 
-// @LINE:23
-case controllers_Application_showallknols10_route(params) => {
+// @LINE:21
+case controllers_Application_aboutus10_route(params) => {
    call { 
-        controllers_Application_showallknols10_invoker.call(controllers.Application.showallknols)
+        controllers_Application_aboutus10_invoker.call(controllers.Application.aboutus)
    }
 }
         
 
-// @LINE:26
-case controllers_Application_addknolpage11_route(params) => {
+// @LINE:24
+case controllers_Application_showallknols11_route(params) => {
    call { 
-        controllers_Application_addknolpage11_invoker.call(controllers.Application.addknolpage)
+        controllers_Application_showallknols11_invoker.call(controllers.Application.showallknols)
    }
 }
         
 
 // @LINE:27
-case controllers_Application_addknol12_route(params) => {
+case controllers_Application_addknolpage12_route(params) => {
    call { 
-        controllers_Application_addknol12_invoker.call(controllers.Application.addknol())
+        controllers_Application_addknolpage12_invoker.call(controllers.Application.addknolpage)
    }
 }
         
 
-// @LINE:30
-case controllers_Application_editknol13_route(params) => {
-   call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_Application_editknol13_invoker.call(controllers.Application.editknol(id))
+// @LINE:28
+case controllers_Application_addknol13_route(params) => {
+   call { 
+        controllers_Application_addknol13_invoker.call(controllers.Application.addknol())
    }
 }
         
 
 // @LINE:31
-case controllers_Application_updateknol14_route(params) => {
+case controllers_Application_editknol14_route(params) => {
    call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_Application_updateknol14_invoker.call(controllers.Application.updateknol(id))
+        controllers_Application_editknol14_invoker.call(controllers.Application.editknol(id))
    }
 }
         
 
-// @LINE:34
-case controllers_Application_deleteknol15_route(params) => {
+// @LINE:32
+case controllers_Application_updateknol15_route(params) => {
    call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_Application_deleteknol15_invoker.call(controllers.Application.deleteknol(id))
+        controllers_Application_updateknol15_invoker.call(controllers.Application.updateknol(id))
    }
 }
         
 
-// @LINE:37
-case controllers_Application_list16_route(params) => {
+// @LINE:35
+case controllers_Application_deleteknol16_route(params) => {
+   call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_Application_deleteknol16_invoker.call(controllers.Application.deleteknol(id))
+   }
+}
+        
+
+// @LINE:38
+case controllers_Application_list17_route(params) => {
    call(params.fromQuery[Int]("p", Some(0)), params.fromQuery[Int]("s", Some(2)), params.fromQuery[String]("f", Some(""))) { (p, s, f) =>
-        controllers_Application_list16_invoker.call(controllers.Application.list(p, s, f))
+        controllers_Application_list17_invoker.call(controllers.Application.list(p, s, f))
    }
 }
         
 
-// @LINE:40
-case controllers_Application_showallsessions17_route(params) => {
+// @LINE:41
+case controllers_Application_showallsessions18_route(params) => {
    call { 
-        controllers_Application_showallsessions17_invoker.call(controllers.Application.showallsessions)
+        controllers_Application_showallsessions18_invoker.call(controllers.Application.showallsessions)
    }
 }
         
 
-// @LINE:44
-case controllers_Assets_at18_route(params) => {
+// @LINE:45
+case controllers_Assets_at19_route(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at18_invoker.call(controllers.Assets.at(path, file))
+        controllers_Assets_at19_invoker.call(controllers.Assets.at(path, file))
    }
 }
         

@@ -42,7 +42,7 @@ Seq[Any](format.raw/*2.14*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 02 00:33:41 IST 2015
+                  DATE: Mon Mar 02 13:48:10 IST 2015
                   SOURCE: /home/knoldus/PlayProjects/MyPlaySlickScala/app/views/headlinks.scala.html
                   HASH: 61f4fa9de48a397db5a5ae1c4be8782ee35b3163
                   MATRIX: 552->29|652->41|680->43|841->178|855->184|932->240|1020->302|1034->308|1088->342|1171->399|1185->405|1237->437|1284->458|1298->464|1375->521|1455->574|1470->580|1545->634|1625->687|1640->693|1723->755|1803->808|1818->814|1904->879
