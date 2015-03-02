@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-This is your new Play application
-=================================
 
-This file will be packaged with your application, when using `activator dist`.
-=======
 Knolx Application
 =================================
 This application is being devoloped using Play Framework, Scala and Slick extension. 
 The basic objective of this application is to manage knolx sessions. 
->>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
