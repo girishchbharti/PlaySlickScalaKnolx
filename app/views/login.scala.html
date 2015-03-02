@@ -2,6 +2,7 @@
 @(title: String)(implicit loginflash: play.api.mvc.Flash)
 
 @loginMain("title"){
+<<<<<<< HEAD
 	
 	<div class="row">
 		<div class="col-md-12">
@@ -9,12 +10,36 @@
 				
     			<!-- Flash messages will be displayed here -->
     			@loginflash.get("regmsg").map { message =>
+=======
+	<div class="row">
+		<div class="col-md-12" style="padding-left:3%; padding-right:5%;">
+			<br/>
+			@loginflash.get("regmsg").map { message =>
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 				<div class="alert alert-dismissable alert-success">
 					<button type="button" class="close" data-dismiss="alert">×</button>
 					<strong>Message:</strong> @message
 				</div>
+<<<<<<< HEAD
 				}
 	    </div>       		
 	</div>
 
+=======
+			}.getOrElse(
+				<div class="alert alert-dismissable alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<strong>Message:</strong> Welcome to Knolx! Please LogIn for aceess or register now!
+				</div>
+			)
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+	       	<div>
+				<img style="width:100%;" src="@routes.Assets.at("/images/emp.jpg")"  alt="Image">	
+			</div>
+	    </div>       		
+	</div>
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 }

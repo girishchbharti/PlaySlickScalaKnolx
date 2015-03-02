@@ -12,12 +12,16 @@ POST	/updateprofile				controllers.Application.updateprofile
 GET		/logout						controllers.Application.logout
 
 # Home Page:
+<<<<<<< HEAD
 GET     /                           controllers.Application.aboutus
 
 GET		/index						controllers.Application.index
 
 #About us
 GET		/aboutus					controllers.Application.aboutus
+=======
+GET     /                           controllers.Application.index
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 
 #Show all knols
 GET 	/showallknols				controllers.Application.showallknols

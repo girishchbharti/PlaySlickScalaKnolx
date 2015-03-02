@@ -86,6 +86,7 @@ class UserTable(tag: Tag) extends Table[User](tag, "knoluser") {
 
 
 object UserTable {
+<<<<<<< HEAD
   //creating table query for UserTable
   val userTable = TableQuery[UserTable]
   
@@ -100,10 +101,16 @@ object UserTable {
    * Output: Number of records inserted.              *
    * **************************************************
    */
+=======
+  val userTable = TableQuery[UserTable]
+  val userAutoIncrement = userTable returning userTable.map(_.id)
+
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def addUser(newuser: User)(implicit session: Session): Int = {
     userTable.insert(newuser)
   }
 
+<<<<<<< HEAD
   /**
    * ******************************************************
    * This function takes email id and password and        *
@@ -113,6 +120,8 @@ object UserTable {
    * Output: Some(1) or Some(0).                          *
    * ******************************************************
    */
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def logInValidate(email: String, password: String)(implicit session: Session): Option[Int] = {
     val list = userTable.filter(_.email === email).list
       try {
@@ -126,6 +135,7 @@ object UserTable {
         case ex: Exception => Some(0)
       }
   }
+<<<<<<< HEAD
   
   /**
    * **************************************************
@@ -135,11 +145,14 @@ object UserTable {
    * Output: userid:Some[User]                        *
    * **************************************************
    */
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def getuser(email:String)(implicit session:Session):Option[User] = {
     val list= userTable.filter(_.email === email).list
     val user=list.head
     Some(user)
   }
+<<<<<<< HEAD
   
   /**
    * **************************************************
@@ -161,6 +174,11 @@ object UserTable {
    * Output: Page[Knol].                              *
    * **************************************************
    **/
+=======
+  def updateuser(user:User)(implicit session:Session):Int = {
+    userTable.filter(_.id === user.id).update(user)
+  }
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def getid(email:String)(implicit session:Session):Some[Int]={
     val query = userTable.filter(_.email === email).list
     val id= query.head.id
@@ -171,6 +189,7 @@ object UserTable {
 object KnolTable {
 
   val knolTable = TableQuery[KnolTable]
+<<<<<<< HEAD
   
   /**
    * **************************************************
@@ -192,10 +211,18 @@ object KnolTable {
    * Output: list:List[Knol]                          *
    * **************************************************
    */
+=======
+
+  def add(knol: Knol)(implicit session: Session): Int = {
+    knolTable.insert(knol)
+  }
+
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def showAllKnols()(implicit s: Session): List[Knol] = {
     knolTable.list(s)
   }
 
+<<<<<<< HEAD
   /**
    * **************************************************
    * This function takes knol id and return knol      *
@@ -204,11 +231,14 @@ object KnolTable {
    * Output: knol:Knol(Object)                        *
    * **************************************************
    */
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def getKnol(id: Int)(implicit s: Session): Knol = {
     val list = knolTable.list
     val knol = list.filter(knol => knol.id.get == id).head
     knol
   }
+<<<<<<< HEAD
   
   /**
    * **************************************************
@@ -241,6 +271,17 @@ object KnolTable {
    * Output: Page[Knol].                              *
    * **************************************************
    */
+=======
+
+  def updateKnol(knol: Knol)(implicit session: Session): Int = {
+    knolTable.filter(_.id === knol.id).update(knol)
+  }
+
+  def deleteknol(id: Int)(implicit session: Session) = {
+    knolTable.filter(_.id === id).delete
+  }
+
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def list(page: Int = 0, pageSize: Int = 5, orderBy: Int = 1, filter: String = "%")(implicit session: Session): Page[Knol] = {
     val offset = pageSize * page
     val query = (
@@ -253,6 +294,7 @@ object KnolTable {
     val result = query.list
     Page(result, page, offset, total)
   }
+<<<<<<< HEAD
   
   /**
    * **************************************************
@@ -262,6 +304,9 @@ object KnolTable {
    * Output: total number of knolders.                *
    * **************************************************
    */
+=======
+
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def countknols(filter: String)(implicit s: Session): Int =
     Query(knolTable.filter(_.name.toLowerCase like filter.toLowerCase).length).first
 
@@ -286,7 +331,10 @@ object SessioTable {
   def add(knolsession: KnolSession)(implicit session: Session): Int = {
     sessionTable.insert(knolsession)
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   /**
    * **************************************************
    * This function delets a knol record from knol     *
@@ -298,7 +346,10 @@ object SessioTable {
   def delete(id: Int)(implicit session: Session) = {
     sessionTable.filter(_.id === id).delete
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   /**
    * **************************************************
    * This function update a knol in database          *
@@ -309,7 +360,10 @@ object SessioTable {
   def update(knolsession: KnolSession)(implicit session: Session) = {
     sessionTable.filter(_.id === knolsession.id).update(knolsession)
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   /**
    * **************************************************
    * This function generate Knol list according to    *
@@ -329,6 +383,7 @@ object SessioTable {
     val result = query.list
     Page(result, page, offset, total)
   }
+<<<<<<< HEAD
   
   /**
    * **************************************************
@@ -338,6 +393,8 @@ object SessioTable {
    * Output: total records:Int                        *
    * **************************************************
    */
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def countsession(filter: String)(implicit session: Session): Int = {
     Query(sessionTable.filter(_.topic.toLowerCase like filter.toLowerCase).length).first
   }

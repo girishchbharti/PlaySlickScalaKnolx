@@ -1,5 +1,9 @@
 @(user:String)(implicit flash: play.api.mvc.Flash)
+<<<<<<< HEAD
 @main("About us",user){
+=======
+@main(user){
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 	
 	@*****************************************************
 	* This is the image for the index page.              *
@@ -13,10 +17,18 @@
 					<button type="button" class="close" data-dismiss="alert">×</button>
 					<strong>Message!</strong> @message
 				</div>
+<<<<<<< HEAD
 			}
 		</div>
 	</div>
 	<div style="padding-left: 2%; padding-right:2%">
 		@aboutuscontent("About us")	
+=======
+			}.getOrElse{Error found}
+		</div>
+	</div>
+	<div style="padding-left: 2%; padding-right:2%">
+		<img style="width:100%;" src="@routes.Assets.at("/images/emp.jpg")"  alt="Image">	
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
 	</div>
 }

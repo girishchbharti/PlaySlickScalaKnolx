@@ -2,6 +2,7 @@
 @import com.knoldus.models._
 @import helper._
 
+<<<<<<< HEAD
 @(title:String, user: String, userForm :Form[User])
 
 @main("My Profile",user){
@@ -10,6 +11,21 @@
 	       	<h4>My Profile:</h4>
 	  			<div style="padding:2%;">
 				@form(routes.Application.updateprofile(),'id->"editform") {    
+=======
+@(user: String,userForm :Form[User])
+
+@main(user){
+	<div class="row" style="padding-top:2%;">
+		<div class="col-md-2">
+	       	<div>
+	       			
+			</div>
+	    </div>
+	    <div class="col-md-5">
+	       	<h4>My Profile:</h4>
+	  			<div style="padding:2%;">
+				@form(routes.Application.updateprofile()) {    
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
      				<fieldset>
         			    @inputText(userForm("name"), '_label -> "Name", 'class -> "form-control")
         			    @inputText(userForm("address"), '_label -> "Address", 'class -> "form-control")
@@ -20,12 +36,18 @@
         			</fieldset>
         			<div class="actions">
         				<br/>
+<<<<<<< HEAD
             			<input type="submit" value="Update" class="btn btn-primary"> or 
             			<a href="@routes.Application.index()" class="btn btn-default">Cancel</a> 
+=======
+            			<input type="submit" value="Update" class="btn btn-primary btn-sm"> or 
+            			<a href="@routes.Application.index()" class="btn btn-default btn-sm">Cancel</a> 
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
         			</div>
     				}
     			</div>
     	</div>
+<<<<<<< HEAD
 	    <div class="col-md-4">
 	    	<img style="height:100%;width:100%;" src="@routes.Assets.at("/images/user.png")" alt="Image not found"/>
 	    	<a class="btn btn-default" href="#">Edit picture</a>
@@ -53,3 +75,12 @@
 	});
 </script>
 
+=======
+	    <div class="col-md-3">
+	    
+	    </div>
+	</div>
+	
+	
+}
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc

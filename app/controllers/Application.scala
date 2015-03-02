@@ -89,6 +89,7 @@ object Application extends Controller {
    * ***********************************************
    */
   def login = Action { implicit request =>
+<<<<<<< HEAD
     Ok(views.html.login("LogIn"))
   }
 
@@ -96,6 +97,9 @@ object Application extends Controller {
     rs.session.get("user").map { user=>
       Ok(views.html.aboutus("About Us",user))  
     }.getOrElse(Ok(views.html.aboutus("About Us","Guest")))  
+=======
+    Ok(views.html.login("LogIn")).flashing("regmsg" -> "Please LogIn for accessing services")
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   }
 
   /**
@@ -155,7 +159,11 @@ object Application extends Controller {
   def registerNow: Action[AnyContent] = DBAction { implicit rs =>
     regForm.bindFromRequest.fold(
       formWithErrors => {
+<<<<<<< HEAD
         LogInHome.flashing("regmsg" -> s"Form not filled correctly! Please fill required fields!")
+=======
+        Ok(views.html.login("Error"))
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
       },
       form => {
         try {
@@ -164,12 +172,20 @@ object Application extends Controller {
           LogInHome.flashing("regmsg" -> s"Registration successfull! ${form.name} Now You can login through login panel")
         } catch {
           case ex: Exception => {
+<<<<<<< HEAD
             LogInHome.flashing("regmsg" -> s"Exception found! Please contact to administrator!")
+=======
+            LogInHome
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
           }
         }
       })
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   /**
    * ******************************************************
    * This function takes no arguments and provide update  *
@@ -177,13 +193,23 @@ object Application extends Controller {
    * Input: No arguments.                                 *
    * Output:Knol records.                                 *
    * ******************************************************
+<<<<<<< HEAD
    */
+=======
+   */  
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def myprofile(): Action[AnyContent] = DBAction { implicit rs =>
     rs.request.session.get("username").map { email =>
       val user = UserTable.getuser(email)
       user match {
+<<<<<<< HEAD
         case user => Ok(views.html.myprofile("Profile",email,regForm.fill(user.get)))
         case None => Ok("Error")
+=======
+        case user => Ok(views.html.myprofile("Profile", regForm.fill(user.get)))
+        case None => Ok("Error")
+
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
       }
     }.getOrElse {
       Unauthorized("Oops, you are not connected")
@@ -205,9 +231,15 @@ object Application extends Controller {
         formWithErrors => {
           Ok(views.html.index("Home")).flashing("success" -> "Please try again! You have entered form with errors!")
         },
+<<<<<<< HEAD
         user => {
           val id = UserTable.getid(email).get
           val userToUpdate: User = user.copy(id = Some(id), updated = new Date())
+=======
+        user =>{
+          val id = UserTable.getid(email).get
+          val userToUpdate: User = user.copy(id = Some(id))
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
           UserTable.updateuser(userToUpdate)
           Ok("Successfull")
         })
@@ -239,9 +271,13 @@ object Application extends Controller {
    * ******************************************************
    */
   def showallknols: Action[AnyContent] = DBAction { implicit rs =>
+<<<<<<< HEAD
     rs.request.session.get("username").map { user =>
       Ok(views.html.showallknols(user, KnolTable.showAllKnols()))
     }.getOrElse(Ok("You are not logged in! Please login to continue..!!"))
+=======
+    Ok(views.html.showallknols("All Knols", KnolTable.showAllKnols()))
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   }
 
   /**
@@ -328,6 +364,7 @@ object Application extends Controller {
     KnolListHome.flashing("success" -> s"Knolder has been deleted")
   }
 
+<<<<<<< HEAD
   /**
    * **************************************************
    * This function takes no arguments and shows all   *
@@ -336,10 +373,13 @@ object Application extends Controller {
    * Output: Page[knolSession].                       *
    * **************************************************
    */
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def showallsessions(): Action[AnyContent] = DBAction { implicit rs =>
     Ok("Session table will be here")
   }
 
+<<<<<<< HEAD
   /**
    * **************************************************
    * This function generate Knol list according to    *
@@ -348,6 +388,8 @@ object Application extends Controller {
    * Output: Page[Knol].                              *
    * **************************************************
    */
+=======
+>>>>>>> 631477d625cb916c71dbc67ec67d6093674f97dc
   def list(page: Int, orderBy: Int, filter: String) = DBAction { implicit request =>
     val pageData = KnolTable.list(page = page, orderBy = orderBy, filter = ("%" + filter + "%"))
     Ok(views.html.list(pageData, orderBy, filter))
