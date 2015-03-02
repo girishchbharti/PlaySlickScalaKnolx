@@ -1,0 +1,34 @@
+@* login Template File *@
+@(title: String)(content:Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+        <title>@title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		@headlinks("css/javascripts/jquery")
+	  </head>
+    <body style="background-color:gray;">
+    	<div class="container" style="background-color:white;">
+	       	<div class="row">
+	       		<div class="col-md-12">
+	       			@headerlogin("header")
+	       		</div>
+	       	</div>
+	       	<div class="row">
+	       		<div class="col-md-3">
+	       			@leftlinkpanel("leftlinkpanel")
+	       		</div>
+	       		<div class="col-md-9">
+	       			<div class="panel panel-default">
+  						<div class="panel-body">
+	       					@content    				
+						</div>
+  					</div>
+				</div>
+	       	</div>
+	       	@footer("Footer")
+		</div>
+	</body>
+</html>	

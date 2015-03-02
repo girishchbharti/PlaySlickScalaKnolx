@@ -1,0 +1,60 @@
+@* login Template File *@
+@import helper._
+@import com.knoldus.models._
+
+@(title: String, regForm : Form[User])(implicit flash: play.api.mvc.Flash)
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@loginMain("Register"){
+	<div class="row" style="padding-top:2%;">
+	    <div class="col-md-8">
+	       	<h5>Registration Form:</h5>
+	       		@flash.get("success").map { message =>
+					<div class="alert alert-dismissable alert-warning">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<strong>Message</strong> @message
+					</div>
+				}
+	  			<div style="padding:2%;">
+				@helper.form(action = routes.Application.registerNow(), 'id->"regForm") {    
+     				<fieldset>
+        			    @inputText(regForm("name"), '_label -> "Name", 'class -> "form-control")
+        			    @inputText(regForm("address"), '_label -> "Address", 'class -> "form-control")
+        			    @inputText(regForm("company"), '_label -> "Company", 'class -> "form-control")
+        				@inputText(regForm("email"), '_label -> "Email", 'class -> "form-control")
+        				@inputPassword(regForm("password"), '_label -> "Password", 'class -> "form-control")
+        				@inputText(regForm("phone"), '_label -> "Contact No", 'class -> "form-control")
+        			</fieldset>
+        			<div class="actions">
+        				<br/>
+            			<input type="submit" value="Register" class="btn btn-primary"> or 
+            			<a href="@routes.Application.login()" class="btn btn-default">Cancel</a> 
+        			</div>
+    				}
+    			</div>
+    	</div>
+    	<div class="col-md-4">
+    	</div>
+	</div>
+}
+<!-- Script to validate client side form validations -->
+<script>
+	$("#regForm").validate({
+		rules : {
+			name : {
+				required : true
+			},
+			company:{
+				required:true
+			},
+			password : {
+				required : true
+			},
+			email:{
+				required:true,
+				email:true
+			}
+		}
+	});
+</script>

@@ -1,0 +1,39 @@
+@(title:String, user: String)(content: Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+        <title>@title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		@headlinks("css/javascript/jquery")
+   </head>
+    <body style="background-color:gray;">
+    <div class="container" style="background-color:white;">
+    	@****************************************
+    	*The Header is being called here.       *
+    	****************************************@
+    	@header(user)
+    	@****************************************************
+    	*This is dynamic content coming from different pages*
+    	****************************************************@
+    	<div class="row">
+    		<div class="col-md-3">
+    			@leftlinkpanel("Left link panel")
+    		</div>
+    		<div class="col-md-9">
+    			<div class="panel panel-default">
+  					<div class="panel-body">
+	       				@content    				
+					</div>
+  				</div>		
+    		</div>
+    	</div>
+
+    	@*********************************
+    	*The footer is being called here.*
+    	*********************************@
+    	@footer("Footer")
+    </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+eclipse
+run
+clean compile
+clean
+compile
+run
+clean 
+compile
+run
+clean compile
+clean
+compile
+run
+clean 
+compile
+clean
+compile
+run
+clean
+compile
+run 8080
+run
+~run 8080
+clean
+compile
+~run
+clean
+compile
+run 
+clean
+compile
+run
+run 8080
+clean
+compile
+run
+run 8888
+clean
+compile
+run

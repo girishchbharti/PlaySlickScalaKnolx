@@ -1,0 +1,32 @@
+@import helper._
+@import com.knoldus.models._
+
+@(title: String, addKnolForm : Form[Knol])
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Add New Knolder","user"){
+	<div class="row">
+		<div class="col-md-6">
+			<div style="padding:2%;">
+				<h4>@title</h4>
+				@form(routes.Application.addknol()) {    
+     			   <fieldset>
+        		    	@inputText(addKnolForm("name"), '_label -> "Name", 'class -> "form-control")
+        		    	@inputText(addKnolForm("email"), '_label -> "Email", 'class -> "form-control")
+        		    	@inputText(addKnolForm("m_no"), '_label -> "Mobile", 'class -> "form-control")
+        			</fieldset>
+        			<div class="actions">
+        				<br/>
+            			<input type="submit" value="Add New Knol" class="btn btn-primary btn-sm"> or 
+            			<a href="@routes.Application.list()" class="btn btn-default btn-sm">Cancel</a> 
+        			</div>
+    			}
+    		</div>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+	
+	
+}

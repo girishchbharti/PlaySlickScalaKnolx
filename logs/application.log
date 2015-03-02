@@ -1,0 +1,123 @@
+2015-03-02 00:45:32,685 - [INFO] - from play in pool-14-thread-1 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2015-03-02 00:45:41,786 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 00:45:44,164 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-03-02 00:48:32,298 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 00:48:32,591 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-03-02 00:59:48,485 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 00:59:48,682 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-03-02 01:01:13,865 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:01:14,075 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-03-02 01:02:27,782 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:02:27,965 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:03:24,065 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:03:24,260 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:04:10,359 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:04:10,617 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:04:47,808 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:04:47,983 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:05:35,857 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:05:36,068 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:05:58,945 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:05:59,193 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:06:28,269 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:06:28,439 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:13:57,225 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:13:57,399 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:17:34,490 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:17:34,655 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:18:25,416 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:18:25,577 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:21:07,975 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:21:08,177 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:22:06,235 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:22:06,394 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2015-03-02 01:22:34,609 - [INFO] - from play in play-internal-execution-context-12 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:22:34,769 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2015-03-02 01:22:56,340 - [INFO] - from play in play-internal-execution-context-12 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:22:56,516 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2015-03-02 01:23:20,632 - [INFO] - from play in play-internal-execution-context-12 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:23:20,794 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
+2015-03-02 01:23:42,350 - [INFO] - from play in play-internal-execution-context-12 
+database [default] connected at jdbc:postgresql://localhost:5432/knolxdemo
+
+2015-03-02 01:23:42,538 - [INFO] - from play in play-internal-execution-context-12 
+Application started (Dev)
+
